@@ -11,11 +11,12 @@ import { Keyboard, Pressable, StyleSheet, TouchableOpacity } from 'react-native'
 import { theme } from '../style/theme';
 
 //screen
-import Group from '../screens/home/Group';
+import Group from '../screens/home/Group/GroupList';
 import AccountScreen from '../screens/home/Account';
 import Friend from '../screens/home/Friend';
 import Splashscreen from '../screens/intro/SplashScreen';
 import IntroSteps from '../screens/intro/IntroSteps';
+import AddGroup from '../screens/home/Group/AddGroup';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -150,6 +151,11 @@ const AppNavigator = () => {
                 <Tab.Screen
                     name="Group"
                     component={Group}
+                    options={{ headerShown: false, title: 'Group' }}
+                />
+                <Tab.Screen
+                    name="AddGroup"
+                    component={AddGroup}
                     options={{ headerShown: false, title: 'Group' }}
                 />
                 <Tab.Screen

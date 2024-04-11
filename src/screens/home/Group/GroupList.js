@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, Center, VStack, Button, Box, ScrollView, Divider } from 'native-base';
 import * as Iconly from 'react-native-iconly'; // Importing icons from react-native-iconly
-import { theme } from '../../style/theme';
-import constant from '../../config/constant';
+import { theme } from '../../../style/theme';
+import constant from '../../../config/constant';
+import StorageService from '../../../services/StorageService';
 
-// Sample data for groups (replace with actual data fetched from storage)
-const groupsData = [
-    { id: 1, name: 'Group 1', description: 'Description of Group 1', totalExpense: 100 },
-    { id: 2, name: 'Group 2', description: 'Description of Group 2', totalExpense: 200 },
-    { id: 3, name: 'Group 3', description: 'Description of Group 3', totalExpense: 300 },
-];
-
-const Group = () => {
+const Group = ({ navigation }) => {
+    const [groups, setGroups] = useState([]);
+    useEffect(() => {
+        // Load groups from AsyncStorage using StorageService when the component mounts
+        const loadGroups = async () => {
+            const storedGroups = await StorageService.getData('groups');
+            if (storedGroups) {
+                setGroups(storedGroups);
+            }
+        };
+        loadGroups();
+    }, []);
     return (
         <Center bg={theme.colors.bgcolor[400]} flex={1}>
             <VStack space={4} mt={6} alignItems="center">
@@ -19,7 +24,7 @@ const Group = () => {
             </VStack>
             <Divider my={2} bg={theme.colors.primary[500]} />
             <ScrollView>
-                {groupsData.map((group) => (
+                {groups?.map((group) => (
                     <Box
                         key={group.id}
                         bg="white"
