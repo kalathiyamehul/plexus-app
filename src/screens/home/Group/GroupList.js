@@ -3,23 +3,17 @@ import { Text, Center, VStack, Button, Box, ScrollView, Divider } from 'native-b
 import * as Iconly from 'react-native-iconly'; // Importing icons from react-native-iconly
 import { theme } from '../../../style/theme';
 import constant from '../../../config/constant';
-import StorageService from '../../../services/StorageService';
 import { TouchableOpacity } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllGroups } from '../../../redux/actions/group';
 
 const Group = ({ navigation }) => {
-    const [groups, setGroups] = useState([]);
+    const { groups } = useSelector(state => state.group);
+    console.log("groups", groups)
+    const dispatch = useDispatch();
     useEffect(() => {
-        // Load groups from AsyncStorage using StorageService when the component mounts
-        const loadGroups = async () => {
-            const storedGroups = await StorageService.getData('groups');
-            if (storedGroups) {
-                setGroups(storedGroups);
-            }
-        };
-
-        loadGroups();
-    }, []);
-
+        dispatch(getAllGroups());
+    }, [])
     const handleGroupClick = (group) => {
         navigation.navigate('GroupDetail', { group });
     };

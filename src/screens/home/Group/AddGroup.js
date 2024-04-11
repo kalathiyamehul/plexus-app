@@ -1,10 +1,11 @@
-// AddGroup.js
-
 import React, { useState } from 'react';
-import { Center, VStack, FormControl, Input, Button, HStack, Box } from 'native-base';
-import StorageService from '../../../services/StorageService';
+import { useDispatch } from 'react-redux';
+import { Center, VStack, FormControl, Input, Button, Heading, Divider, Box } from 'native-base';
+import { addGroupAsync } from '../../../redux/actions/group';
 
 const AddGroup = ({ navigation }) => {
+
+    const dispatch = useDispatch();
     const [groupName, setGroupName] = useState('');
 
     const handleAddGroup = async () => {
@@ -12,10 +13,6 @@ const AddGroup = ({ navigation }) => {
         if (!groupName.trim()) {
             return;
         }
-
-        // Get existing groups from AsyncStorage
-        let existingGroups = await StorageService.getData('groups');
-        existingGroups = existingGroups ? existingGroups : [];
 
         // Create new group object
         const newGroup = {
@@ -26,8 +23,8 @@ const AddGroup = ({ navigation }) => {
             activities: []
         };
 
-        existingGroups.push(newGroup);
-        await StorageService.saveData('groups', existingGroups);
+        // Dispatch addGroup action to add the new group to Redux store
+        dispatch(addGroupAsync(newGroup));
         navigation.goBack();
     };
 

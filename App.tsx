@@ -4,11 +4,16 @@ import AppNavigator from './src/navigation/AppNavigator';
 import 'react-native-gesture-handler';
 import {NativeBaseProvider} from 'native-base';
 import {theme} from './src/style/theme';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
+
 function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <SafeAreaView style={{flex: 1, backgroundColor: '#292929'}}>
-        <AppNavigator />
+        <Provider store={store}>
+          <AppNavigator />
+        </Provider>
       </SafeAreaView>
     </NativeBaseProvider>
   );
