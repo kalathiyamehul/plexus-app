@@ -17,6 +17,7 @@ import Friend from '../screens/home/Friend';
 import Splashscreen from '../screens/intro/SplashScreen';
 import IntroSteps from '../screens/intro/IntroSteps';
 import AddGroup from '../screens/home/Group/AddGroup';
+import GroupDetail from '../screens/home/Group/GroupDetail';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -154,11 +155,6 @@ const AppNavigator = () => {
                     options={{ headerShown: false, title: 'Group' }}
                 />
                 <Tab.Screen
-                    name="AddGroup"
-                    component={AddGroup}
-                    options={{ headerShown: false, title: 'Group' }}
-                />
-                <Tab.Screen
                     name="Friend"
                     component={Friend}
                     options={{ headerShown: false, title: 'Friend' }}
@@ -190,6 +186,11 @@ const AppNavigator = () => {
 
                 <Stack.Screen name="Group" component={Group}
                     options={{ headerShown: false }} />
+                <Stack.Screen name="AddGroup" component={AddGroup}
+                    options={{ headerShown: false }} />
+                <Stack.Screen name="GroupDetail" component={GroupDetail}
+                    options={{ headerShown: false }} />
+
 
                 <Stack.Screen name="Friend" component={Friend}
                     options={{ headerShown: false }} />

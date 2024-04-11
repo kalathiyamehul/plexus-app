@@ -23,6 +23,7 @@ const AddGroup = ({ navigation }) => {
             name: groupName.trim(),
             description: '',
             totalExpense: 0,
+            activities: []
         };
 
         existingGroups.push(newGroup);
