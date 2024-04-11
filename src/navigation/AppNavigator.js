@@ -170,7 +170,9 @@ const AppNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="SplashScreen">
+                initialRouteName="SplashScreen"
+                screenOptions={screenOptions}
+            >
                 <Stack.Screen name="Home" component={BottomTabs}
                     options={{ headerShown: false }} />
 

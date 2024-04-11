@@ -15,7 +15,7 @@ const Splashscreen = ({ navigation, route }) => {
             }
             navigation.replace(redirectScreen);
         };
-        const redirectTimeout = setTimeout(redirectAfterDelay, 4000); // Replace 5000 with the desired delay in milliseconds
+        const redirectTimeout = setTimeout(redirectAfterDelay, 500); // Replace 5000 with the desired delay in milliseconds
         return () => clearTimeout(redirectTimeout);
     }, []);
 
