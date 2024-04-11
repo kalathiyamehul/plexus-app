@@ -21,16 +21,11 @@ const GroupDetail = ({ route, navigation }) => {
 
     return (
         <Box flex={1}>
-            {/* Background */}
             <Box height="15%" bg={backgroundColor}></Box>
-            {/* Content */}
-            <Box flex={1} p={4} position="relative">
-                {/* Header */}
+            <Box flex={1} p={4} height="15%" >
                 <VStack space={4}>
                     <Box height="15%" justifyContent="center">
-                        {/* Back arrow button */}
                         <Iconly.ArrowLeft set="light" size={24} color="white" onPress={() => navigation.goBack()} style={{ position: 'absolute', left: 10, top: 10 }} />
-                        {/* Setting icon */}
                         <Iconly.Setting set="bold" size={24} color="white" onPress={() => console.log('Setting icon pressed')} style={{ position: 'absolute', right: 10, top: 10 }} />
                     </Box>
                     {/* Group icon */}
@@ -42,9 +37,7 @@ const GroupDetail = ({ route, navigation }) => {
                     {/* Total expense */}
                     <Text fontSize="lg" fontWeight="bold" color="white">Total Expense: ${group.totalExpense}</Text>
                 </VStack>
-                {/* Divider */}
                 <Box borderBottomWidth={1} borderColor="white" my={4} />
-                {/* Activity list */}
                 <ScrollView>
                     {group.activities.map((activity, index) => (
                         <Box key={index} flexDirection="row" alignItems="center" justifyContent="space-between" my={2}>

@@ -186,8 +186,12 @@ const AppNavigator = () => {
 
                 <Stack.Screen name="Group" component={Group}
                     options={{ headerShown: false }} />
-                <Stack.Screen name="AddGroup" component={AddGroup}
-                    options={{ headerShown: false }} />
+                <Stack.Screen name="AddGroup"
+                    component={AddGroup}
+                    options={{
+                        name: "Add Group",
+                        headerShown: true
+                    }} />
                 <Stack.Screen name="GroupDetail" component={GroupDetail}
                     options={{ headerShown: false }} />
 
