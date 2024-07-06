@@ -6,7 +6,7 @@ export const theme = extendTheme({
             200: '#BAE6E3',
             300: '#97DAD5',
             400: '#75CDC7',
-            500: '#52C1B9',
+            500: '#605DEC',
             600: '#52C1B9',
         },
         gray: {
@@ -88,7 +88,7 @@ export const theme = extendTheme({
         Button: {
             baseStyle: props => {
                 return {
-                    rounded: 'full',
+                    rounded: 4,
                     size: 'lg',
                     height: 55,
                     p: [4, 8, 4, 8],

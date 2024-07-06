@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ExpenseManager.app"
-               BlueprintName = "ExpenseManager"
-               ReferencedContainer = "container:ExpenseManager.xcodeproj">
+               BuildableName = "Plexus.app"
+               BlueprintName = "Plexus"
+               ReferencedContainer = "container:Plexus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ExpenseManagerTests.xctest"
-               BlueprintName = "ExpenseManagerTests"
-               ReferencedContainer = "container:ExpenseManager.xcodeproj">
+               BuildableName = "PlexusTests.xctest"
+               BlueprintName = "PlexusTests"
+               ReferencedContainer = "container:Plexus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ExpenseManager.app"
-            BlueprintName = "ExpenseManager"
-            ReferencedContainer = "container:ExpenseManager.xcodeproj">
+            BuildableName = "Plexus.app"
+            BlueprintName = "Plexus"
+            ReferencedContainer = "container:Plexus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ExpenseManager.app"
-            BlueprintName = "ExpenseManager"
-            ReferencedContainer = "container:ExpenseManager.xcodeproj">
+            BuildableName = "Plexus.app"
+            BlueprintName = "Plexus"
+            ReferencedContainer = "container:Plexus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

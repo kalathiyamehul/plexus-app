@@ -9,49 +9,43 @@ import {
     Platform,
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { Box, Text, VStack, HStack, Divider, Button, View, useColorModeValue } from 'native-base';
+import { Box, Text, VStack, HStack, Divider, Button, View, useColorModeValue, Image } from 'native-base';
 var { height, width } = Dimensions.get('window');
 import LottieView from 'lottie-react-native';
 import StorageService from '../../services/StorageService';
 import { blockchaincrypto, rupeeinvestment, stone, wallet_money_added } from '../../../assets/json';
 import { theme } from '../../style/theme';
+import { step1, step2, step3 } from '../../../assets/images';
 
 const slides = [
     {
         key: 1,
-        title: 'Be an active participant in your favorite Content and Creators',
-        text: 'Unlock opportunity to partake in Content IP revenues across assets such as Films, Music, Books & more',
-        image: rupeeinvestment,
+        title: 'Connect with Dentists across India',
+        text: 'Transform your dental practice with our app! Connect with consultants, freelancers, technicians and streamline your workflow—all in one place.',
+        image: step1,
         backgroundColor: '#86888F',
     },
     {
         key: 2,
-        title: 'Purchase Tokens of the various projects and benefit from IP cycle.',
-        text: `Embrace the earning potential with project Tokens and Content IP.`,
-        image: stone,
+        title: 'Effortless Appointment Booking',
+        text: `Book appointments with consultants, laboratories and freelancers easily. Post cases of the day and track patient data seamlessly.`,
+        image: step2,
         backgroundColor: '#86888F',
     },
     {
-        key: 2,
-        title: 'Be an active participant in your favorite Content and Creators',
-        text: 'Unlock opportunity to partake in Content IP revenues across assets such as Films, Music, Books & more',
-        image: blockchaincrypto,
+        key: 3,
+        title: 'Collaborate and Succeed',
+        text: 'Showcase your expertise, provide consultations and collaborate on complex cases. Boost efficiency and stay at the cutting edge of dental innovation.',
+        image: step3,
         backgroundColor: '#86888F',
-    },
-    {
-        key: 4,
-        title: 'Benefit from over 25 Content IP Rights and partake in their revenues',
-        text: 'Watch your project grow in value over time and be part of unlocking great returns.',
-        image: wallet_money_added,
-        backgroundColor: '#86888F',
-    },
+    }
 ];
 
 const IntroSteps = ({ navigation, route }) => {
     const _renderItem = ({ item, i }) => {
         return (
             <VStack justifycontent="center" alignItems="center" key={item.key}>
-                <LottieView
+                {/* <LottieView
                     source={item.image}
                     autoPlay={true}
                     loop={true}
@@ -62,7 +56,17 @@ const IntroSteps = ({ navigation, route }) => {
                         marginTop: "10%",
                         width: width,
                         alignItems: 'center',
-                    }} />
+                    }} /> */}
+                <Image
+                    source={item?.image}
+                    resizeMode="contain"
+                    alt='Logo'
+                    style={{
+                        height: "50%",
+                        width: "50%",
+                        alignSelf: 'center'
+                    }}
+                />
                 <Box
                     px={4}
                     w="100%"
@@ -122,7 +126,8 @@ const IntroSteps = ({ navigation, route }) => {
                     {props != 2 ? (
                         <Button
                             bg="primary.500"
-                            width={130} onPress={() => {
+                            width={"90%"}
+                            onPress={() => {
                                 this.slider && this.slider.goToSlide(props + 1, true);
                             }}>
                             Next
@@ -131,7 +136,8 @@ const IntroSteps = ({ navigation, route }) => {
 
                         <Button
                             bg="primary.500"
-                            width={200} onPress={() => skipIntro()}>
+                                width={"90%"}
+                                onPress={() => skipIntro()}>
                             Get started
                         </Button>
                     )}
