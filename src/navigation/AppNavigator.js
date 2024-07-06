@@ -18,6 +18,9 @@ import Splashscreen from '../screens/intro/SplashScreen';
 import IntroSteps from '../screens/intro/IntroSteps';
 import AddGroup from '../screens/home/Group/AddGroup';
 import GroupDetail from '../screens/home/Group/GroupDetail';
+import Login from '../screens/auth/Login';
+import Signup from '../screens/auth/Signup';
+import SetMpin from '../screens/auth/SetMpin';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -168,7 +171,6 @@ const AppNavigator = () => {
         );
     };
 
-
     return (
         <NavigationContainer>
             <Stack.Navigator
@@ -181,11 +183,28 @@ const AppNavigator = () => {
                 <Stack.Screen name="SplashScreen" component={Splashscreen}
                     options={{ headerShown: false }} />
 
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Signup"
+                    component={Signup}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="SetMpin"
+                    component={SetMpin}
+                    options={{ headerShown: false }}
+                />
+
                 <Stack.Screen name="IntroSteps" component={IntroSteps}
                     options={{ headerShown: false }} />
 
                 <Stack.Screen name="Group" component={Group}
                     options={{ headerShown: false }} />
+
                 <Stack.Screen name="AddGroup"
                     component={AddGroup}
                     options={{

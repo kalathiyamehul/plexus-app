@@ -1,19 +1,14 @@
 import React, { useEffect } from 'react';
 import {
-    StyleSheet,
-    ImageBackground,
     Dimensions,
     TouchableOpacity,
     StatusBar,
     SafeAreaView,
-    Platform,
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { Box, Text, VStack, HStack, Divider, Button, View, useColorModeValue, Image } from 'native-base';
+import { Box, Text, VStack, HStack, Button, View, Image } from 'native-base';
 var { height, width } = Dimensions.get('window');
-import LottieView from 'lottie-react-native';
 import StorageService from '../../services/StorageService';
-import { blockchaincrypto, rupeeinvestment, stone, wallet_money_added } from '../../../assets/json';
 import { theme } from '../../style/theme';
 import { step1, step2, step3 } from '../../../assets/images';
 
@@ -97,7 +92,7 @@ const IntroSteps = ({ navigation, route }) => {
     };
     async function skipIntro() {
         await StorageService.saveData('isIntroSkip', 'yes');
-        navigation.replace('Home');
+        navigation.replace('Login');
     }
     const _renderPagination = props => {
         return (
@@ -135,9 +130,10 @@ const IntroSteps = ({ navigation, route }) => {
                     ) : (
 
                         <Button
-                            bg="primary.500"
+                                bg="primary.500"
                                 width={"90%"}
-                                onPress={() => skipIntro()}>
+                                onPress={() => skipIntro()}
+                            >
                             Get started
                         </Button>
                     )}

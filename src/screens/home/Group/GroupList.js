@@ -56,7 +56,7 @@ const Group = ({ navigation }) => {
                 ))}
             </ScrollView>
             <Button
-                onPress={() => navigation.navigate('AddGroup')}
+                onPress={() => navigation.navigate('Login')}
                 width="50%"
                 marginBottom={4}
                 shadow={6}

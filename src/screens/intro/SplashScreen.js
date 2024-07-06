@@ -9,7 +9,7 @@ const Splashscreen = ({ navigation, route }) => {
             let isIntroSkip = await StorageService.getData('isIntroSkip');
             let redirectScreen = "";
             if (isIntroSkip == 'yes')
-                redirectScreen = "Home";
+                redirectScreen = "Login";
             else {
                 redirectScreen = "IntroSteps";//IntroScreen
             }
