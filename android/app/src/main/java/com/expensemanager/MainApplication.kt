@@ -1,4 +1,4 @@
-package com.expensemanager
+package com.plexus
 
 import android.app.Application
 import com.facebook.react.PackageList
