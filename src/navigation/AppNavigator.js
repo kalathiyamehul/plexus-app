@@ -21,6 +21,7 @@ import GroupDetail from '../screens/home/Group/GroupDetail';
 import Login from '../screens/auth/Login';
 import Signup from '../screens/auth/Signup';
 import SetMpin from '../screens/auth/SetMpin';
+import OnboardingScreen from '../screens/auth/Onboarding';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -198,7 +199,11 @@ const AppNavigator = () => {
                     component={SetMpin}
                     options={{ headerShown: false }}
                 />
-
+                <Stack.Screen
+                    name="OnboardingScreen"
+                    component={OnboardingScreen}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen name="IntroSteps" component={IntroSteps}
                     options={{ headerShown: false }} />
 

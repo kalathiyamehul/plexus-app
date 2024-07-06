@@ -1,9 +1,10 @@
 // SetMpinScreen.js
 import React, { useState } from 'react';
-import { StyleSheet, TouchableWithoutFeedback, View, Modal, TouchableOpacity, Keyboard } from 'react-native';
+import { StyleSheet, TouchableWithoutFeedback, View, Modal, Keyboard, TouchableOpacity } from 'react-native';
 import { Box, Text, VStack, Button, Center, HStack, Checkbox } from 'native-base';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import { theme } from '../../style/theme';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const SetMpin = ({ navigation }) => {
     const [mpin, setMpin] = useState('');
@@ -28,13 +29,20 @@ const SetMpin = ({ navigation }) => {
 
     const handleYes = () => {
         setShowModal(false);
-        navigation.navigate('Home');
+        navigation.navigate('OnboardingScreen');
     };
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <View style={{ flex: 1 }}>
                 <Box flex={1} width="100%" bg="white" position="relative">
+                    {/* <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+                        <Ionicons
+                            name="arrow-back"
+                            size={24}
+                            color="black"
+                        />
+                    </TouchableOpacity> */}
                     <Center>
                         <VStack space={4} mt={4} w="90%" maxW="400px">
                             <Text fontSize="2xl" fontWeight="bold">Set MPIN</Text>
@@ -152,6 +160,12 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         alignSelf: 'flex-end',
+    },
+    backButton: {
+        position: 'absolute',
+        top: 40,
+        left: 20,
+        zIndex: 1,
     },
 });
 
